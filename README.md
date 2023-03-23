@@ -1,6 +1,5 @@
 # Vanilla JS
 
-- ## Table of contents
 
 ## DOM manipulation
 
