@@ -67,3 +67,44 @@ fetchData((data) => {
 ```
 
 In this example, the **`fetchData`** function accepts a callback function as an argument. The callback function is called with the data after 2 seconds, and the data is logged to the console.
+
+`Project:`
+
+- `index.html`
+
+```jsx
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Async Example</title>
+</head>
+<body>
+  <button id="fetch-data">Fetch Data</button>
+
+  <script src="app.js"></script>
+</body>
+</html>
+```
+
+- `app.js`
+
+```jsx
+function fetchData() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Data received');
+    }, 2000);
+  });
+}
+
+const fetchButton = document.getElementById('fetch-data');
+fetchButton.addEventListener('click', () => {
+  fetchData().then((data) => {
+    console.log(data);
+  });
+});
+```
+
+In this example, we have an HTML file with a button element that has an ID of **`fetch-data`**
+. In the JavaScript file, we define a function called **`fetchData`** that returns a Promise that resolves after 2 seconds with the message "Data received". We then add an event listener to the **`fetchButton`** element that calls **`fetchData`** when the button is clicked. When the Promise resolves, the message is logged to the console.
